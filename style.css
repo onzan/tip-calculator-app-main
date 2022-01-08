@@ -1,0 +1,277 @@
+html,
+body {
+  margin: 0;
+  background-color: #c5e4e7;
+  font-family: "Space Mono", monospace;
+  width: 100vw;
+  height: 933px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  height: 144px;
+  padding-top: 50px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+main {
+  margin: 0;
+  background-color: white;
+  padding: 32px 24px;
+  border-radius: 20px 20px 0 0;
+  width: 375px;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.input-box {
+  display: flex;
+  position: relative;
+}
+
+.input-bill::before {
+  content: "";
+  width: 13px;
+  height: 16px;
+  background: url(images/icon-dollar.svg) no-repeat center center / auto 100%;
+  display: inline-block;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+.input-people::before {
+  content: "";
+  width: 13px;
+  height: 16px;
+  background: url(images/icon-person.svg) no-repeat center center / auto 100%;
+  display: inline-block;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+
+.input-box input {
+  padding: 16px;
+  background-color: #f4fafa;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  text-align: right;
+  height: 16px;
+  font-family: "Space Mono", monospace;
+  font-size: 24px;
+  font-weight: 700;
+  color: #00494d;
+}
+
+input::placeholder {
+  text-align: right;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Space Mono", monospace;
+  color: #7f9c9f;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid #26c0ab;
+}
+
+.label-text {
+  margin-bottom: 7px;
+  color: #5e7a7d;
+  font-size: 16px;
+}
+
+.error-message {
+  color: red;
+  display: none;
+}
+
+input:invalid {
+  border-color: red;
+  display: block;
+}
+
+.label-people {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.calculate-elem {
+  padding: 0 8px;
+}
+
+.select-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 15px;
+  margin-bottom: 32px;
+}
+
+.select-container > p {
+  margin-bottom: 0;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.tip {
+  background-color: #00494d;
+  color: white;
+}
+
+button {
+  height: 48px;
+  border: none;
+  border-radius: 5px;
+  padding: 12px auto;
+  font-family: "Space Mono", monospace;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 700;
+  transition: all 0.3s ease 0s;
+}
+
+button:hover {
+  background-color: #26c0ab;
+  color: #00494d;
+  opacity: 1;
+}
+
+.result-elem {
+  background-color: #00494d;
+  border-radius: 16px;
+  padding: 24px;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+}
+
+.result-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  margin-top: 32px;
+}
+
+.result-label > p {
+  color: white;
+  font-size: 16px;
+  line-height: 16px;
+  margin-bottom: 0;
+}
+
+.result-label > small {
+  color: #5e7a7d;
+  font-size: 14px;
+}
+
+.result {
+  color: #26c0ab;
+  font-size: 32px;
+  align-items: baseline;
+  /* font-weight: 700; */
+}
+
+.reset-btn {
+  font-size: 20px;
+  opacity: 0.2;
+  color: #00494d;
+  margin-top: 40px;
+}
+
+.attribution {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    height: 100vh;
+  }
+  header {
+    height: 304px;
+    padding-top: 160px;
+  }
+  main {
+    width: 920px;
+    height: 480px;
+    border-radius: 20px;
+    margin: auto;
+    display: flex;
+    padding: 32px;
+    box-shadow: 0 20px 60px 0 rgba(0, 105, 112, 0.2);
+    box-sizing: border-box;
+  }
+  .calculate-elem {
+    flex: 1;
+    padding: 12px 17px;
+  }
+
+  .select-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+    margin-bottom: 40px;
+    padding: 0;
+  }
+
+  .select-container > p {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+
+  .tip {
+    width: 116px;
+  }
+  input[name="custom"]::placeholder {
+    text-align: center;
+    font-size: 23px;
+  }
+
+  .result-elem {
+    flex: 1;
+    margin-top: 0;
+    margin-left: 30px;
+    padding: 40px;
+    padding-top: 0px;
+  }
+
+  .result-info {
+    height: 56px;
+    margin-top: 40px;
+    align-items: flex-end;
+  }
+
+  .result-label {
+    margin: auto 0;
+  }
+  .result {
+    font-size: 48px;
+    height: 56px;
+    margin: 0;
+  }
+  .reset-btn {
+    margin-top: auto;
+    font-size: 20px;
+  }
+  .attribution {
+    display: block;
+    margin-top: auto;
+    padding: 10px;
+    color: #00494d;
+  }
+  a,
+  a:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+}

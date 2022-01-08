@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <img src="images/logo.svg" alt="logo" />
+      </header>
+      <main>
+        <!-- Input Section -->
+        <div class="calculate-elem">
+          <!-- bill -->
+          <section class="bill">
+            <div class="label-text">
+              <label for="bill">Bill</label>
+            </div>
+            <div class="input-box input-bill">
+              <input type="text" name="bill" placeholder="0" />
+            </div>
+          </section>
+          <!-- Tips -->
+          <div class="select-container">
+            <p class="label-text">Select Tip %</p>
+            <button class="tip" onclick="splitBill(5)">5%</button>
+            <button class="tip" onclick="splitBill(10)">10%</button>
+            <button class="tip" onclick="splitBill(15)">15%</button>
+            <button class="tip" onclick="splitBill(25)">25%</button>
+            <button class="tip" onclick="splitBill(50)">50%</button>
+            <form
+              onsubmit="splitBill(this[0].value); return false;"
+              class="input-box"
+            >
+              <input type="text" name="custom" placeholder="Custom" />
+            </form>
+          </div>
+          <!-- bill -->
+          <section class="people">
+            <div class="label-text label-people">
+              <label for="people">Number of People</label>
+              <div class="error-message">Can't be zero</div>
+            </div>
+            <div class="input-box input-people">
+              <input type="text" name="people" placeholder="0" required />
+            </div>
+          </section>
+        </div>
+        <!-- Result Section -->
+        <div class="result-elem">
+          <!-- Tip Amount -->
+          <section class="result-info">
+            <div class="result-label">
+              <p>Tip Amount</p>
+              <small>/ person</small>
+            </div>
+
+            <p class="result result-tip">$0.00</p>
+          </section>
+
+          <!-- Total -->
+          <section class="result-info">
+            <div class="result-label">
+              <p>Total</p>
+              <small>/ person</small>
+            </div>
+
+            <p class="result result-total">$0.00</p>
+          </section>
+
+          <!-- Reset Button -->
+          <button class="reset-btn" onclick="resetInput()">Reset</button>
+        </div>
+      </main>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by miya38.
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
